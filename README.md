@@ -1,22 +1,84 @@
-# DIO - Trilha .NET - Programação orientada a objetos
-www.dio.me
+# DIO - Trilha .NET - Programação Orientada a Objetos
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de orientação a objetos, da trilha .NET da DIO.
+Projeto desenvolvido como parte da trilha .NET da [DIO](https://www.dio.me/), focado em conceitos de Programação Orientada a Objetos (POO).
+
+## Desafio
+
+Modelar um sistema de celulares utilizando abstração, herança e polimorfismo. O objetivo é criar uma estrutura que permita diferentes marcas e modelos de smartphones terem comportamentos próprios, promovendo reuso de código.
 
 ## Contexto
-Você é responsável por modelar um sistema que trabalha com celulares. Para isso, foi solicitado que você faça uma abstração de um celular e disponibilize maneiras de diferentes marcas e modelos terem seu próprio comportamento, possibilitando um maior reuso de código e usando a orientação a objetos.
 
-## Proposta
-Você precisa criar um sistema em .NET, do tipo console, mapeando uma classe abstrata e classes específicas para dois tipos de celulares: Nokia e iPhone. 
-Você deve criar as suas classes de acordo com o diagrama abaixo:
+Você é responsável por criar a abstração de um celular, permitindo que marcas como Nokia e iPhone implementem suas particularidades, especialmente no processo de instalação de aplicativos.
+
+## Especificação
+
+- **Classe Abstrata:** `Smartphone`
+  - Não pode ser instanciada diretamente.
+  - Serve como modelo para outras classes.
+- **Classes Filhas:** `Nokia` e `Iphone`
+  - Devem herdar de `Smartphone`.
+  - Devem sobrescrever o método `InstalarAplicativo`, pois cada uma possui uma forma diferente de instalar aplicativos.
+
+### Diagrama de Classes
 
 ![Diagrama classes](Imagens/diagrama.png)
 
-## Regras e validações
-1. A classe **Smartphone** deve ser abstrata, não permitindo instanciar e servindo apenas como modelo.
-2. A classe **Nokia** e **Iphone** devem ser classes filhas de Smartphone.
-3. O método **InstalarAplicativo** deve ser sobrescrito na classe Nokia e iPhone, pois ambos possuem diferentes maneiras de instalar um aplicativo.
+## Estrutura do Projeto
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+```
+trilha-net-poo-desafio/
+│
+├── Program.cs
+├── Models/
+│   ├── Smartphone.cs
+│   ├── Nokia.cs
+│   └── Iphone.cs
+└── README.md
+```
+
+## Como Executar
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repo.git
+   cd trilha-net-poo-desafio
+   ```
+
+2. **Restaure e execute o projeto:**
+   ```bash
+   dotnet restore
+   dotnet run
+   ```
+
+## Exemplo de Uso
+
+Ao executar o projeto, você verá exemplos de criação de smartphones e instalação de aplicativos:
+
+```
+Smartphone Nokia:
+Número: 11999999999
+Modelo: Nokia 3310
+IMEI: 123456789
+Memória: 32
+Instalando aplicativo WhatsApp no Nokia...
+
+Smartphone iPhone:
+Número: 11988888888
+Modelo: iPhone 13
+IMEI: 987654321
+Memória: 128
+Instalando aplicativo Instagram no iPhone...
+```
+
+## Regras e Validações
+
+1. A classe **Smartphone** deve ser abstrata.
+2. As classes **Nokia** e **Iphone** devem herdar de **Smartphone**.
+3. O método **InstalarAplicativo** deve ser sobrescrito em ambas as classes filhas.
+
+## Contribuição
+
+Sinta-se à vontade para abrir issues ou pull requests para melhorias!
+
+---
+Projeto para fins educacionais.
